@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Silverking_Options>
+            <version>1.0.0</version>
+        </Silverking_Options>
+    </modules>
+    <global>
+        <models>
+            <sko>
+                <class>Silverking_Options_Model</class>
+            </sko>
+            <catalog>
+                <rewrite>
+                    <product>Silverking_Options_Model_Catalog_Product</product>
+                </rewrite>
+            </catalog>
+        </models>
+        <helpers>
+            <sko>
+                <class>Silverking_Options_Helper</class>
+            </sko>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <catalog_product_load_before>
+                <observers>
+                    <transparent_custom_options>
+                        <class>sko/observer</class>
+                        <method>enabledTransparentCustomOptions</method>
+                    </transparent_custom_options>
+                </observers>
+            </catalog_product_load_before>
+        </events>
+        <layout>
+            <updates>
+                <sko>
+                    <file>sko.xml</file>
+                </sko>
+            </updates>
+        </layout>
+    </frontend>
+</config>
